@@ -28,6 +28,7 @@ The ``llvm-package-windows`` project builds all major versions of LLVM on **GitH
 
 * Target CPU:
 	- AMD64 (a.k.a. x86_64)
+	- ARM64 (a.k.a aarch64)
 
 * C/C++ Runtime:
 	- LIBCMT (static)
