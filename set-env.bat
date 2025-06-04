@@ -12,6 +12,8 @@ set CONFIGURATION=
 if "%1" == "" goto :finalize
 if /i "%1" == "x86" goto :x86
 if /i "%1" == "i386" goto :x86
+if /i "%1" == "arm64" goto :arm64
+if /i "%1" == "aarch64" goto :arm64
 if /i "%1" == "amd64" goto :amd64
 if /i "%1" == "x86_64" goto :amd64
 if /i "%1" == "x64" goto :amd64
@@ -46,6 +48,13 @@ goto :loop
 set TARGET_CPU=amd64
 set CMAKE_GENERATOR_SUFFIX=
 set CMAKE_ARCH_OPTIONS=-A x64
+shift
+goto :loop
+
+:arm64
+set TARGET_CPU=arm64
+set CMAKE_GENERATOR_SUFFIX=
+set CMAKE_ARCH_OPTIONS=-A ARM64
 shift
 goto :loop
 
